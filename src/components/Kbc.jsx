@@ -1,0 +1,82 @@
+import { useEffect, useState } from "react";
+import "./Kbc.css";
+
+import useSound from "use-sound";
+import play from "../assets/KbcBackground.mp3";
+import correct from "../assets/correct.mp3";
+import wrong from "../assets/wrong.mp3";
+import won from "../assets/KBC.mp3";
+
+export default function Kbc({
+  data,
+  setStop,
+  questionNumber,
+  setQuestionNumber,
+  setEarned,
+  moneyPyramid,
+}) {
+  const [question, setQuestion] = useState(null);
+  const [selectedAnswer, setselectedAnswer] = useState(null);
+  const [className, setclassName] = useState("answer");
+  const [letsPlay] = useSound(play);
+  const [correctAnswer] = useSound(correct);
+  const [wrongAnswer] = useSound(wrong);
+  const [wonCrore] = useSound(won);
+
+  useEffect(() => {
+    letsPlay();
+  }, [letsPlay]);
+
+  useEffect(() => {
+    setQuestion(data[questionNumber - 1]);
+  }, [data, questionNumber]);
+
+  const delay = (duration, callback) => {
+    setTimeout(() => {
+      callback();
+    }, duration);
+  };
+
+  const handleClick = (a) => {
+    setselectedAnswer(a);
+    setclassName("answer active");
+    delay(3000, () =>
+      setclassName(a.correct ? "answer correct" : "answer wrong")
+    );
+    delay(5000, () => {
+      if (a.correct) {
+        correctAnswer();
+        delay(1000, () => {
+          setQuestionNumber((prev) => prev + 1);
+          setselectedAnswer(null);
+        });
+      } else {
+        wrongAnswer();
+        delay(1000, () => {
+          setStop(true);
+        });
+      }
+      if (questionNumber >= 15 && a.correct) {
+        wonCrore();
+        setStop(true);
+        setQuestionNumber(0);
+        setEarned(moneyPyramid.find((m) => m.id === questionNumber).amount);
+      }
+    });
+  };
+  return (
+    <div className="kbc">
+      <div className="question">{question?.question}</div>
+      <div className="answers">
+        {question?.answers.map((a) => (
+          <div
+            className={selectedAnswer === a ? className : "answer"}
+            onClick={() => handleClick(a)}
+          >
+            {a.text}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
