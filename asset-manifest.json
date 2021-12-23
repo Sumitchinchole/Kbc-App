@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Kbc-App/static/css/main.643b5592.chunk.css",
+    "main.js": "/Kbc-App/static/js/main.98a98219.chunk.js",
+    "main.js.map": "/Kbc-App/static/js/main.98a98219.chunk.js.map",
+    "runtime-main.js": "/Kbc-App/static/js/runtime-main.6dd48baa.js",
+    "runtime-main.js.map": "/Kbc-App/static/js/runtime-main.6dd48baa.js.map",
+    "static/js/2.e7639101.chunk.js": "/Kbc-App/static/js/2.e7639101.chunk.js",
+    "static/js/2.e7639101.chunk.js.map": "/Kbc-App/static/js/2.e7639101.chunk.js.map",
+    "static/js/3.a7f50a0a.chunk.js": "/Kbc-App/static/js/3.a7f50a0a.chunk.js",
+    "static/js/3.a7f50a0a.chunk.js.map": "/Kbc-App/static/js/3.a7f50a0a.chunk.js.map",
+    "index.html": "/Kbc-App/index.html",
+    "static/css/main.643b5592.chunk.css.map": "/Kbc-App/static/css/main.643b5592.chunk.css.map",
+    "static/js/2.e7639101.chunk.js.LICENSE.txt": "/Kbc-App/static/js/2.e7639101.chunk.js.LICENSE.txt",
+    "static/js/3.a7f50a0a.chunk.js.LICENSE.txt": "/Kbc-App/static/js/3.a7f50a0a.chunk.js.LICENSE.txt",
+    "static/media/KBC.37b6be46.mp3": "/Kbc-App/static/media/KBC.37b6be46.mp3",
+    "static/media/App.css": "/Kbc-App/static/media/Kbc2.01d58408.jpg",
+    "static/media/KbcBackground.679c6db8.mp3": "/Kbc-App/static/media/KbcBackground.679c6db8.mp3",
+    "static/media/correct.160572d7.mp3": "/Kbc-App/static/media/correct.160572d7.mp3",
+    "static/media/wrong.e9468218.mp3": "/Kbc-App/static/media/wrong.e9468218.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6dd48baa.js",
+    "static/js/2.e7639101.chunk.js",
+    "static/css/main.643b5592.chunk.css",
+    "static/js/main.98a98219.chunk.js"
+  ]
+}
